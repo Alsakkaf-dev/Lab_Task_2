@@ -24,11 +24,13 @@ body {
 
 /* Header & Filter */
 header {
-  max-width: 1200px;
-  margin: 40px auto 20px auto;
+ max-width: 1200px;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center; 
+  flex-wrap: wrap;     
+  gap: 20px;
   padding: 0 20px;
 }
 
