@@ -313,3 +313,8 @@ button {
     cursor: pointer;
     transition: 0.2s border;
 }
+
+#priorityFilter:focus {
+    outline: none;
+    border-color: #6366f1;
+}
