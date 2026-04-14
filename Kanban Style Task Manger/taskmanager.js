@@ -185,3 +185,29 @@ clearDoneBtn.onclick = () => {
         }, index * 100);
     });
 };
+
+document.querySelectorAll('.task-list').forEach(list => {
+    // Allows the element to be dropped
+    list.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        list.classList.add('drag-over');
+    });
+
+    list.addEventListener('dragleave', () => {
+        list.classList.remove('drag-over');
+    });
+
+    list.addEventListener('drop', (e) => {
+        e.preventDefault();
+        list.classList.remove('drag-over');
+        
+        // Get the ID of the task being dragged
+        const id = e.dataTransfer.getData('text/plain');
+        const draggedElement = document.querySelector(`li[data-id="${id}"]`);
+        
+        // Move the element in the DOM
+        if (draggedElement) {
+            list.appendChild(draggedElement);
+        }
+    });
+});
