@@ -30,3 +30,10 @@ body {
     border-radius: 20px;
     font-size: 0.9rem;
 }
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: flex-start;
+}
