@@ -145,6 +145,14 @@ button[data-action="delete"]:hover {
   font-weight: 800;
 }
 
+.btn-small {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: #f8fafc;
+    color: #475569;
+}
+
 .task-card.high {
   border-left-color: #f87171;
 }
