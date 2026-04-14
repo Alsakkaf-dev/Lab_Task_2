@@ -41,6 +41,15 @@ function createTaskCard(taskObj) {
     delBtn.setAttribute('data-action', 'delete');
     delBtn.setAttribute('data-id', taskObj.id);
 
+    li.setAttribute('draggable', 'true');
+    li.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', taskObj.id);
+    li.classList.add('dragging');
+});
+    li.addEventListener('dragend', () => {
+        li.classList.remove('dragging');
+    });
+
     btnContainer.append(editBtn, delBtn);
     li.append(title, desc, meta, btnContainer);
     
