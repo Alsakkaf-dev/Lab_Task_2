@@ -3,24 +3,35 @@
     /* 2 Primary colors */
     --color-primary: #1e293b;
     --color-secondary: #3b82f6;
+    
     /* 2 Accent colors */
+    --color-accent: #f59e0b;
+    --color-accent-hover: #d97706;
+    
+    /* 3 Neutral greys */
     --color-bg: #f8fafc;
     --color-border: #e2e8f0;
     --color-text-muted: #64748b;
     
-    /* 3 Neutral greys */
+    /* Font families */
     --font-heading: 'Georgia', serif;
     --font-body: 'system-ui', -apple-system, sans-serif;
-    
-    /* Font families */
-    --space-sm: 0.8rem;
-    --space-md: 1.6rem;
-    --space-lg: 3.2rem;
     
     /* 3 Spacing values */
     --space-sm: 0.8rem;
     --space-md: 1.6rem;
     --space-lg: 3.2rem;
+}
+
+/* CSS RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
@@ -29,14 +40,4 @@ body {
     line-height: 1.6;
     background-color: var(--color-bg);
     padding: var(--space-md);
-}
-
-html {
-    font-size: 62.5%; /* 1rem = 10px */
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
