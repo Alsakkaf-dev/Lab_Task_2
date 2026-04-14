@@ -42,3 +42,22 @@ function createTaskCard(taskObj) {
     return li;
 }
 
+
+function addTask(columnId, taskObj) {
+    tasks.push(taskObj);
+    const card = createTaskCard(taskObj);
+    document.querySelector(`#${columnId} .task-list`).appendChild(card);
+    updateTaskCounter();
+}
+
+function deleteTask(taskId) {
+    const card = document.querySelector(`li[data-id="${taskId}"]`);
+    if (card) {
+        card.classList.add('fade-out');
+        card.addEventListener('animationend', () => {
+            card.remove();
+            tasks = tasks.filter(t => t.id !== taskId);
+            updateTaskCounter();
+        });
+    }
+}
