@@ -159,6 +159,8 @@ button[data-action="delete"]:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(8px);
 }
 
 .modal-content {
