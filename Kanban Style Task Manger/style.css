@@ -98,6 +98,13 @@ button[data-action="delete"]:hover {
   color: white;
 }
 
+#saveTaskBtn {
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
 .task-card.high {
   border-left-color: #ef4444;
 }
