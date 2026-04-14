@@ -384,6 +384,14 @@ button {
     align-items: flex-end;
 }
 
+.filter-controls label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
 .filter-controls span {
   font-size: 0.65rem;
   font-weight: 800;
