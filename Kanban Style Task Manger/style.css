@@ -125,3 +125,18 @@ button {
 }
 
 #saveTaskBtn { background: #3b82f6; color: white; }
+
+.dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+}
+
+.drag-over {
+    background-color: #d1d5db !important;
+    border: 2px dashed #9ca3af;
+    transition: background-color 0.2s ease;
+}
+
+.task-card {
+    cursor: grab;
+}
