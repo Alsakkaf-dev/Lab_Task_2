@@ -37,3 +37,10 @@ body {
     gap: 20px;
     align-items: flex-start;
 }
+
+.column {
+    background: #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 400px;
+}
