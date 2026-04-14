@@ -40,12 +40,14 @@ header {
   font-size: 0.9rem;
 }
 
-/* Kanban Board Layout */
+
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px; 
+    margin: 40px auto; 
+    padding: 0 20px;
 }
 
 .column {
