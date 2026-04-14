@@ -139,6 +139,11 @@ button[data-action="delete"] {
     color: #e11d48;
 }
 
+.delete-style:hover {
+    background: #e11d48;
+    color: #fff;
+}
+
 button[data-action="delete"]:hover {
   background: var(--danger);
   color: white;
