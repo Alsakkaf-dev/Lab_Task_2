@@ -1,12 +1,24 @@
 /* --- TASK 1: Custom Properties & Reset --- */
 :root {
     /* 2 Primary colors */
-    
+    --color-primary: #1e293b;
+    --color-secondary: #3b82f6;
     /* 2 Accent colors */
+    --color-bg: #f8fafc;
+    --color-border: #e2e8f0;
+    --color-text-muted: #64748b;
     
     /* 3 Neutral greys */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'system-ui', -apple-system, sans-serif;
     
     /* Font families */
+    --space-sm: 0.8rem;
+    --space-md: 1.6rem;
+    --space-lg: 3.2rem;
     
     /* 3 Spacing values */
+    --space-sm: 0.8rem;
+    --space-md: 1.6rem;
+    --space-lg: 3.2rem;
 }
