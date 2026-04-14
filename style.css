@@ -104,3 +104,9 @@ header {
 .card:hover {
     transform: translateY(-4px);
 }
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 320px; 
+    }
+}
