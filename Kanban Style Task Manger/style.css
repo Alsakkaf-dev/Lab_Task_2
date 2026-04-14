@@ -69,10 +69,8 @@ header {
 }
 
 .task-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    min-height: 450px;
+    padding-bottom: 20px;
 }
 
 /* Task Cards */
