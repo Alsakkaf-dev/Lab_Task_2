@@ -41,3 +41,32 @@ body {
     background-color: var(--color-bg);
     padding: var(--space-md);
 }
+
+/* --- TASK 2: Typography & Box Model --- */
+h1 {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    margin-bottom: var(--space-md);
+}
+
+p {
+    font-size: 1.6rem;
+    color: var(--color-text-muted);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    margin-top: var(--space-sm);
+}
