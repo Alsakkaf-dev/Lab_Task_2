@@ -91,3 +91,5 @@ body {
   color: #666;
   margin-bottom: 10px;
 }
+
+.is-hidden { display: none !important; }
