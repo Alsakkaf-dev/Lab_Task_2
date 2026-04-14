@@ -248,6 +248,18 @@ button[data-action="delete"]:hover {
     color: #0f172a;
 }
 
+.modal-content label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+
 input,
 textarea,
 select {
