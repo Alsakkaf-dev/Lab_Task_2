@@ -50,3 +50,10 @@ body {
     justify-content: space-between;
     margin-bottom: 15px;
 }
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
