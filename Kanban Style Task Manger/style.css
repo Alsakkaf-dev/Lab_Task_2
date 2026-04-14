@@ -68,3 +68,10 @@ body {
     border-left: 5px solid #ccc;
     cursor: default;
 }
+
+.task-card.high { border-left-color: #ef4444; }
+.task-card.medium { border-left-color: #f59e0b; }
+.task-card.low { border-left-color: #3b82f6; }
+
+.task-card h3 { font-size: 1.1rem; margin-bottom: 5px; cursor: pointer; }
+.task-card p { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
