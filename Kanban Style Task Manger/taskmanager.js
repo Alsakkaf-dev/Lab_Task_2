@@ -97,3 +97,10 @@ function inlineEdit(titleElement, taskId) {
   input.onkeydown = (e) => { if (e.key === 'Enter') commitChange(); };
 }
 
+priorityFilter.addEventListener('change', (e) => {
+    const val = e.target.value;
+    document.querySelectorAll('.task-card').forEach(card => {
+        const isMatch = val === 'all' || card.classList.contains(val);
+        card.classList.toggle('is-hidden', !isMatch);
+    });
+});
