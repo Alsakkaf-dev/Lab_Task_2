@@ -30,3 +30,7 @@ body {
     background-color: var(--color-bg);
     padding: var(--space-md);
 }
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
