@@ -24,16 +24,16 @@ body {
 
 /* Header & Filter */
 header {
-  max-width: 1200px; 
-  margin: 40px auto 20px auto; 
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
   display: flex;
-  justify-content: space-between; 
-  align-items: flex-end; 
+  justify-content: space-between;
+  align-items: flex-end;
   padding: 0 20px;
 }
 
 .header-right {
-    text-align: right;
+  text-align: right;
 }
 
 .badge {
@@ -116,16 +116,16 @@ button:active {
 
 /* Task Cards */
 .task-card {
-   position: relative;
-    border-left: 8px solid #cbd5e1; /* The Bar thickness */
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 14px;
-    margin-bottom: 16px;
-    transition: 0.2s transform;
-    border-top: 1px solid #f1f5f9;
-    border-right: 1px solid #f1f5f9;
-    border-bottom: 1px solid #f1f5f9;
+  position: relative;
+  border-left: 8px solid #cbd5e1; /* The Bar thickness */
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  transition: 0.2s transform;
+  border-top: 1px solid #f1f5f9;
+  border-right: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .task-card:hover {
@@ -168,13 +168,18 @@ button[data-action="delete"]:hover {
 
 .task-card.high {
   border-left-color: #f87171;
+  background: linear-gradient(to right, #fef2f2, #ffffff 15%);
 }
 .task-card.medium {
   border-left-color: #fbbf24;
+  background: linear-gradient(to right, #fffbeb, #ffffff 15%);
 }
 .task-card.low {
   border-left-color: #60a5fa;
+  background: linear-gradient(to right, #eff6ff, #ffffff 15%);
 }
+
+
 .task-card h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
@@ -283,41 +288,41 @@ button {
 }
 
 #totalBadge {
-    display: inline-flex; 
-    width: auto;
-    padding: 6px 16px;
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-    border-radius: 99px;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: 700;
-    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  display: inline-flex;
+  width: auto;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border-radius: 99px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
 
 .filter-controls span {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 6px;
-    display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+  display: block;
 }
 
 #priorityFilter {
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 10px 15px;
-    background: white;
-    font-family: inherit;
-    font-weight: 600;
-    color: #1e293b;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    cursor: pointer;
-    transition: 0.2s border;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background: white;
+  font-family: inherit;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: 0.2s border;
 }
 
 #priorityFilter:focus {
-    outline: none;
-    border-color: #6366f1;
+  outline: none;
+  border-color: #6366f1;
 }
