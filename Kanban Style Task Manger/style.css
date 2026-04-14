@@ -300,3 +300,16 @@ button {
     margin-bottom: 6px;
     display: block;
 }
+
+#priorityFilter {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: white;
+    font-family: inherit;
+    font-weight: 600;
+    color: #1e293b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    cursor: pointer;
+    transition: 0.2s border;
+}
