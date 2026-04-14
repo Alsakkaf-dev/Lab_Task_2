@@ -397,3 +397,10 @@ select:focus {
     border-color: #6366f1;
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); 
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: #6366f1;
+    cursor: pointer;
+    filter: invert(41%) sepia(87%) saturate(1915%) hue-rotate(218deg) brightness(98%) contrast(92%);
+}
