@@ -58,9 +58,14 @@ header {
 }
 
 .column-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #1e293b;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .task-list {
