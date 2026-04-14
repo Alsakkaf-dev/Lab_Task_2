@@ -158,6 +158,10 @@ button:active {
   border-top: 1px solid #f1f5f9;
   border-right: 1px solid #f1f5f9;
   border-bottom: 1px solid #f1f5f9;
+   max-width: 100%;
+   overflow-wrap: break-word;
+   word-wrap: break-word;
+   word-break: break-word;
 }
 
 .task-card:hover {
@@ -230,16 +234,17 @@ button[data-action="delete"]:hover {
 }
 
 
-.task-card h3 {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #0f172a;
-  margin-bottom: 4px;
-}
+.task-card h3 
 .task-card p {
+font-weight: 800;
+font-size: 1.1rem;
+color: #0f172a;
+margin-bottom: 4px;
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 10px;
+  white-space: normal;
+   overflow: hidden;
 }
 
 /* Utilities */
