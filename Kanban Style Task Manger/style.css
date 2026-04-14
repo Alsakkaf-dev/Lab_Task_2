@@ -259,6 +259,12 @@ button[data-action="delete"]:hover {
     margin-top: 10px;
 }
 
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
 
 input,
 textarea,
