@@ -134,5 +134,18 @@ function init() {
   renderNotes();
 }
 
+addBtn.addEventListener("click", addNote);
+    clearAllBtn.addEventListener("click", clearAll);
+    window.addEventListener("resize", updateWindowSize);
+    titleInput.addEventListener("keydown", (e) => { if(e.key === "Enter") addNote(); });
+
+    // Startup
+    notes.push({ id: nextId++, title: "Hello BOM", content: "Resize the window to see changes!" });
+    updateWindowSize();
+    showUserAgent();
+    renderNotes();
+
+
+
 init();
 
