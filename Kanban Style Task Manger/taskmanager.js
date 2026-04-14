@@ -143,6 +143,7 @@ document.getElementById("saveTaskBtn").onclick = () => {
   }
 
   closeModal();
+  
 };
 
 function closeModal() {
