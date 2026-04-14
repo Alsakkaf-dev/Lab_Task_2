@@ -23,7 +23,12 @@ function createTaskCard(taskObj) {
     const desc = document.createElement('p');
     desc.textContent = taskObj.description;
 
-    const meta = document.createElement('div');
+    const meta = document.createElement('span');
+    meta.style.fontSize = "0.75rem";
+    meta.style.color = "#94a3b8";
+    meta.style.display = "block";
+    meta.style.marginBottom = "10px";
+    meta.textContent = taskObj.dueDate ? `📅 Due: ${taskObj.dueDate}` : `📅 No Due Date`;
     meta.style.fontSize = "0.8rem";
     meta.textContent = `Due: ${taskObj.dueDate || 'N/A'}`;
 
@@ -43,16 +48,16 @@ function createTaskCard(taskObj) {
 
     li.setAttribute('draggable', 'true');
     li.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', taskObj.id);
-    li.classList.add('dragging');
-});
+        e.dataTransfer.setData('text/plain', taskObj.id);
+        li.classList.add('dragging');
+    });
     li.addEventListener('dragend', () => {
         li.classList.remove('dragging');
     });
 
     btnContainer.append(editBtn, delBtn);
     li.append(title, desc, meta, btnContainer);
-    
+
     return li;
 }
 
@@ -96,7 +101,7 @@ function inlineEdit(titleElement, taskId) {
     const originalText = titleElement.textContent;
     const input = document.createElement('input');
     input.value = originalText;
-    
+
     titleElement.replaceWith(input);
     input.focus();
 
@@ -109,7 +114,7 @@ function inlineEdit(titleElement, taskId) {
     };
 
     input.onblur = commitChange;
-    input.onkeydown = (e) => { if(e.key === 'Enter') commitChange(); };
+    input.onkeydown = (e) => { if (e.key === 'Enter') commitChange(); };
 }
 
 // Priority Filter
@@ -162,7 +167,7 @@ document.getElementById('saveTaskBtn').onclick = () => {
         const newTask = { id: nextId++, ...data };
         addTask(document.getElementById('modalColumnId').value, newTask);
     }
-    
+
     closeModal();
 };
 
@@ -188,9 +193,9 @@ clearDoneBtn.onclick = () => {
 
 document.querySelectorAll('.column').forEach(column => {
     const list = column.querySelector('.task-list');
-    
+
     column.addEventListener('dragover', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         column.classList.add('drag-over');
     });
 
@@ -201,12 +206,12 @@ document.querySelectorAll('.column').forEach(column => {
     column.addEventListener('drop', (e) => {
         e.preventDefault();
         column.classList.remove('drag-over');
-        
+
         const id = e.dataTransfer.getData('text/plain');
         const draggedCard = document.querySelector(`.task-card[data-id="${id}"]`);
-        
+
         if (draggedCard && list) {
-            list.appendChild(draggedCard); 
+            list.appendChild(draggedCard);
         }
     });
 });
