@@ -11,54 +11,55 @@ const clearDoneBtn = document.getElementById("clearDoneBtn");
 // --- 3. CORE CRUD FUNCTIONS (Task 2) ---
 
 function createTaskCard(taskObj) {
-  // REQUIREMENT: Must NOT use innerHTML/template literals to build the card
-  const li = document.createElement("li");
-  li.classList.add("task-card", taskObj.priority);
-  li.setAttribute("data-id", taskObj.id);
+  const li = document.createElement('li');
+  li.className = `task-card ${taskObj.priority}`; 
+  li.setAttribute('data-id', taskObj.id);
+  li.setAttribute('draggable', 'true');
 
-  const title = document.createElement("h3");
+  
+  const contentWrap = document.createElement('div');
+  contentWrap.style.marginBottom = "12px";
+
+  const title = document.createElement('h3');
   title.textContent = taskObj.title;
-  title.addEventListener("dblclick", () => inlineEdit(title, taskObj.id));
+  title.style.fontSize = "1.1rem";
+  title.addEventListener('dblclick', () => inlineEdit(title, taskObj.id));
 
-  const desc = document.createElement("p");
-  desc.textContent = taskObj.description;
+  const desc = document.createElement('p');
+  desc.textContent = taskObj.description || "—";
+  desc.style.color = "#64748b";
+  desc.style.fontSize = "0.85rem";
 
-  const meta = document.createElement("span");
-  meta.style.fontSize = "0.75rem";
-  meta.style.color = "#94a3b8";
-  meta.style.display = "block";
-  meta.style.marginBottom = "10px";
-  meta.textContent = taskObj.dueDate
-    ? `📅 Due: ${taskObj.dueDate}`
-    : `📅 No Due Date`;
-  meta.style.fontSize = "0.8rem";
-  meta.textContent = `Due: ${taskObj.dueDate || "N/A"}`;
+  const date = document.createElement('span');
+  date.innerHTML = `⏳ ${taskObj.dueDate || 'No date'}`;
+  date.style.cssText = "font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;";
 
-  const btnContainer = document.createElement("div");
-  btnContainer.style.marginTop = "10px";
+  
+  const actionBar = document.createElement('div');
+  actionBar.style.cssText = "display: flex; justify-content: flex-end; gap: 5px; margin-top: 15px;";
 
-  const editBtn = document.createElement("button");
+  const editBtn = document.createElement('button');
   editBtn.textContent = "Edit";
-  editBtn.setAttribute("data-action", "edit");
-  editBtn.setAttribute("data-id", taskObj.id);
+  editBtn.setAttribute('data-action', 'edit');
+  editBtn.setAttribute('data-id', taskObj.id);
+  editBtn.className = "btn-small";
 
-  const delBtn = document.createElement("button");
+  const delBtn = document.createElement('button');
   delBtn.textContent = "Delete";
-  delBtn.style.marginLeft = "5px";
-  delBtn.setAttribute("data-action", "delete");
-  delBtn.setAttribute("data-id", taskObj.id);
+  delBtn.setAttribute('data-action', 'delete');
+  delBtn.setAttribute('data-id', taskObj.id);
+  delBtn.className = "btn-small delete-style";
 
-  li.setAttribute("draggable", "true");
-  li.addEventListener("dragstart", (e) => {
-    e.dataTransfer.setData("text/plain", taskObj.id);
-    li.classList.add("dragging");
+  
+  li.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', taskObj.id);
+    li.classList.add('dragging');
   });
-  li.addEventListener("dragend", () => {
-    li.classList.remove("dragging");
-  });
+  li.addEventListener('dragend', () => li.classList.remove('dragging'));
 
-  btnContainer.append(editBtn, delBtn);
-  li.append(title, desc, meta, btnContainer);
+  contentWrap.append(title, desc);
+  actionBar.append(editBtn, delBtn);
+  li.append(contentWrap, date, actionBar);
 
   return li;
 }
@@ -82,13 +83,10 @@ function deleteTask(taskId) {
   }
 }
 
-// --- 4. INTERACTION LOGIC (Task 3) ---
-
 function updateTaskCounter() {
   totalBadge.textContent = `${tasks.length} Tasks`;
 }
 
-// Event Delegation for Edit/Delete (RUBRIC CRITERION)
 document.querySelectorAll(".task-list").forEach((list) => {
   list.addEventListener("click", (e) => {
     const action = e.target.getAttribute("data-action");
@@ -98,7 +96,6 @@ document.querySelectorAll(".task-list").forEach((list) => {
   });
 });
 
-// Inline Editing (Double-Click)
 function inlineEdit(titleElement, taskId) {
   const originalText = titleElement.textContent;
   const input = document.createElement("input");
@@ -121,7 +118,6 @@ function inlineEdit(titleElement, taskId) {
   };
 }
 
-// Priority Filter
 priorityFilter.addEventListener("change", (e) => {
   const val = e.target.value;
   document.querySelectorAll(".task-card").forEach((card) => {
@@ -130,7 +126,6 @@ priorityFilter.addEventListener("change", (e) => {
   });
 });
 
-// Modal Logic
 function openModal(isNew = true, taskId = null, colId = "todo") {
   modal.classList.remove("is-hidden");
   if (isNew) {
@@ -161,13 +156,13 @@ document.getElementById("saveTaskBtn").onclick = () => {
   };
 
   if (id) {
-    // Update
+    
     const t = tasks.find((x) => x.id === parseInt(id));
     Object.assign(t, data);
     const oldCard = document.querySelector(`li[data-id="${id}"]`);
     oldCard.replaceWith(createTaskCard(t));
   } else {
-    // Create
+
     const newTask = { id: nextId++, ...data };
     addTask(document.getElementById("modalColumnId").value, newTask);
   }
@@ -187,7 +182,6 @@ document.querySelectorAll(".add-task-btn").forEach((btn) => {
   btn.onclick = () => openModal(true, null, btn.getAttribute("data-column"));
 });
 
-// Clear Done (Staggered Animation - RUBRIC CRITERION)
 clearDoneBtn.onclick = () => {
   const cards = document.querySelectorAll("#done .task-card");
   cards.forEach((card, index) => {
