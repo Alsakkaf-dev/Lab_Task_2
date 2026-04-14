@@ -98,3 +98,16 @@ function clearAll() {
         alert("✨ Cleared.");
     }
 }
+
+function updateWindowSize() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    let cat = w < 480 ? "📱 Mobile" : (w < 1024 ? "📑 Tablet" : "💻 Desktop");
+    windowSizeSpan.textContent = `${w} x ${h} px (${cat})`;
+}
+
+function showUserAgent() {
+    let agent = navigator.userAgent;
+    userAgentSpan.textContent = agent.length > 55 ? agent.slice(0, 52) + "..." : agent;
+}
+
