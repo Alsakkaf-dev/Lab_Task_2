@@ -24,12 +24,12 @@ body {
 
 /* Header & Filter */
 header {
+  max-width: 1200px; 
+  margin: 40px auto 20px auto; 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #ddd;
+  justify-content: space-between; 
+  align-items: flex-end; 
+  padding: 0 20px;
 }
 
 .badge {
@@ -116,8 +116,8 @@ button:active {
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   border: 1px solid #edf2f7;
-  position: relative; /* Needed for positioning the bar */
-  overflow: hidden; /* Clips the corner if needed */
+  position: relative;
+  overflow: hidden;
   border-left-width: 8px;
 }
 
@@ -135,13 +135,8 @@ button[data-action="delete"] {
 }
 
 .delete-style {
-    background: #fff1f2;
-    color: #e11d48;
-}
-
-.delete-style:hover {
-    background: #e11d48;
-    color: #fff;
+  background: #fff1f2;
+  color: #e11d48;
 }
 
 button[data-action="delete"]:hover {
@@ -157,11 +152,11 @@ button[data-action="delete"]:hover {
 }
 
 .btn-small {
-    font-size: 0.75rem;
-    padding: 5px 10px;
-    border-radius: 6px;
-    background: #f8fafc;
-    color: #475569;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #475569;
 }
 
 .task-card.high {
