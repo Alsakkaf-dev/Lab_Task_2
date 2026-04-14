@@ -421,6 +421,11 @@ button {
     transition: all 0.2s ease;
 }
 
+#priorityFilter:hover {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+}
+
 #priorityFilter:focus {
   outline: none;
   border-color: #6366f1;
