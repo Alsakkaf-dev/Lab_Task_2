@@ -152,10 +152,14 @@ button[data-action="delete"]:hover {
 }
 
 #saveTaskBtn {
-  background: var(--accent);
+  flex: 2; 
+  background: #6366f1;
   color: white;
-  border-radius: 10px;
-  font-weight: 800;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
 
 .btn-small {
