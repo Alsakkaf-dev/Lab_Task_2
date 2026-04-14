@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Task Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-  <body>
     <header>
-        <div><!-- adding styling later-->
+        <div class="header-content">
             <h1>Kanban Board</h1>
             <div id="totalBadge" class="badge">0 Tasks</div>
         </div>
-        <div> <!-- adding styling later-->
+        <div class="filter-controls">
             <label>Filter Priority:</label>
             <select id="priorityFilter">
                 <option value="all">All</option>
@@ -24,64 +24,65 @@
         </div>
     </header>
 
-      <main><!-- adding styling later-->
-        <section><!-- adding styling later-->
-            <div><!-- adding styling later-->
+    <main class="board">
+        <!-- TO DO COLUMN -->
+        <section class="column" id="todo">
+            <div class="column-header">
                 <h2>To Do</h2>
-                <button>+ Add Task</button><!-- adding styling later-->
+                <button class="add-task-btn" data-column="todo">+ Add Task</button>
             </div>
-            <ul></ul>
+            <ul class="task-list"></ul>
         </section>
 
-        <section><!-- adding styling later-->
-            <div><!-- adding styling later-->
+        <!-- IN PROGRESS COLUMN -->
+        <section class="column" id="inprogress">
+            <div class="column-header">
                 <h2>In Progress</h2>
-                <button>+ Add Task</button><!-- adding styling later-->
+                <button class="add-task-btn" data-column="inprogress">+ Add Task</button>
             </div>
-            <ul></ul><!-- adding styling later-->
+            <ul class="task-list"></ul>
         </section>
 
-        <section><!-- adding styling later-->
-            <div><!-- adding styling later-->
+        <!-- DONE COLUMN -->
+        <section class="column" id="done">
+            <div class="column-header">
                 <h2>Done</h2>
-                <button>Clear Done</button><!-- adding styling later-->
+                <button id="clearDoneBtn">Clear Done</button>
             </div>
-            <ul></ul><!-- adding styling later-->
+            <ul class="task-list"></ul>
         </section>
+    </main>
 
-    <div> <!-- adding styling later-->
-        <div> <!-- adding styling later-->
-            <h2>Add New Task</h2> <!-- adding styling later-->
-            <input >
-            <input >
+    <!-- MODAL POPUP -->
+    <div id="taskModal" class="modal is-hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add New Task</h2>
+            <input type="hidden" id="modalTaskId">
+            <input type="hidden" id="modalColumnId">
             
             <label>Title *</label>
-            <input> 
+            <input type="text" id="taskTitle" placeholder="Task summary">
             
             <label>Description</label>
-            <textarea></textarea>
+            <textarea id="taskDesc" placeholder="Detailed info..."></textarea>
             
             <label>Priority</label>
-            <select >
+            <select id="taskPriority">
                 <option value="low">Low</option>
                 <option value="medium" selected>Medium</option>
                 <option value="high">High</option>
             </select>
-             <label>Due Date</label>
+            
+            <label>Due Date</label>
             <input type="date" id="taskDueDate">
             
-            <div><!-- adding styling later-->
-                <button>Save Task</button><!-- adding styling later-->
-                <button>Cancel</button><!-- adding styling later-->
+            <div class="modal-actions">
+                <button id="saveTaskBtn">Save Task</button>
+                <button id="closeModalBtn">Cancel</button>
             </div>
         </div>
     </div>
 
-      </main>
-
-        
-
-
-  </body>
+    <script src="taskmanager.js"></script>
+</body>
 </html>
-
