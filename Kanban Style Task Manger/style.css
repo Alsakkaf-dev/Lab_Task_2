@@ -32,6 +32,10 @@ header {
   padding: 0 20px;
 }
 
+.header-right {
+    text-align: right;
+}
+
 .badge {
   background: #1e293b;
   color: white;
