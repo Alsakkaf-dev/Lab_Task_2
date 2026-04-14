@@ -91,6 +91,11 @@ header {
     color: #1e293b;
 }
 
+.column-header button:active {
+    transform: translateY(0);
+    scale: 0.95;
+}
+
 .column-header h2 {
   font-size: 1.2rem;
   font-weight: 900;
