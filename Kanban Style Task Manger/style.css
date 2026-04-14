@@ -6,3 +6,9 @@ header {
     padding-bottom: 10px;
     border-bottom: 2px solid #ddd;
 }
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg);
+    padding: 20px;
+}
