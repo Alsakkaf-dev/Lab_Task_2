@@ -377,6 +377,13 @@ button {
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
 
+.filter-controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .filter-controls span {
   font-size: 0.65rem;
   font-weight: 800;
