@@ -81,6 +81,12 @@ header {
     box-shadow 0.2s ease;
 }
 
+.task-card:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); 
+}
+
+
 .task-card.high {
   border-left-color: #ef4444;
 }
