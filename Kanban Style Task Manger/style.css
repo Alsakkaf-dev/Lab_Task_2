@@ -81,11 +81,22 @@ header {
     box-shadow 0.2s ease;
 }
 
-.task-card:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); 
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }
-
+button[data-action="edit"] {
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+button[data-action="delete"] {
+  background: #fef2f2;
+  color: var(--danger);
+}
+button[data-action="delete"]:hover {
+  background: var(--danger);
+  color: white;
+}
 
 .task-card.high {
   border-left-color: #ef4444;
