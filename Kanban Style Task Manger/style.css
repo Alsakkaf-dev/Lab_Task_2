@@ -364,3 +364,12 @@ select {
     font-family: inherit;
     appearance: none; 
 }
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    background-color: white;
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); 
+}
