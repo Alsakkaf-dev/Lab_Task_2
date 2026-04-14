@@ -133,6 +133,12 @@ button[data-action="delete"] {
   background: #fef2f2;
   color: var(--danger);
 }
+
+.delete-style {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
 button[data-action="delete"]:hover {
   background: var(--danger);
   color: white;
