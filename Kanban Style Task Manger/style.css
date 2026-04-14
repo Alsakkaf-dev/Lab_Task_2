@@ -22,3 +22,11 @@ body {
     background-color: var(--bg);
     padding: 20px;
 }
+
+.badge {
+    background: #1e293b;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
