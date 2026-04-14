@@ -181,9 +181,10 @@ button[data-action="delete"]:hover {
 
 
 .task-card h3 {
+  font-weight: 800;
   font-size: 1.1rem;
-  margin-bottom: 5px;
-  cursor: pointer;
+  color: #0f172a;
+  margin-bottom: 4px;
 }
 .task-card p {
   font-size: 0.9rem;
