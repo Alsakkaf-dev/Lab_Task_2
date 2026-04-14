@@ -103,50 +103,65 @@ priorityFilter.addEventListener("change", (e) => {
   });
 });
 
-function openModal(isNew = true, taskId = null, colId = 'todo') {
-  modal.classList.remove('is-hidden');
+function openModal(isNew = true, taskId = null, colId = "todo") {
+  modal.classList.remove("is-hidden");
   if (isNew) {
-    document.getElementById('modalTitle').textContent = "Add Task";
-    document.getElementById('modalTaskId').value = "";
-    document.getElementById('modalColumnId').value = colId;
+    document.getElementById("modalTitle").textContent = "Add Task";
+    document.getElementById("modalTaskId").value = "";
+    document.getElementById("modalColumnId").value = colId;
   } else {
-    const task = tasks.find(t => t.id === taskId);
-    document.getElementById('modalTitle').textContent = "Edit Task";
-    document.getElementById('modalTaskId').value = task.id;
-    document.getElementById('taskTitle').value = task.title;
-    document.getElementById('taskDesc').value = task.description;
-    document.getElementById('taskPriority').value = task.priority;
-    document.getElementById('taskDueDate').value = task.dueDate;
+    const task = tasks.find((t) => t.id === taskId);
+    document.getElementById("modalTitle").textContent = "Edit Task";
+    document.getElementById("modalTaskId").value = task.id;
+    document.getElementById("taskTitle").value = task.title;
+    document.getElementById("taskDesc").value = task.description;
+    document.getElementById("taskPriority").value = task.priority;
+    document.getElementById("taskDueDate").value = task.dueDate;
   }
-
 }
 
-document.getElementById('saveTaskBtn').onclick = () => {
-  const title = document.getElementById('taskTitle').value.trim();
-  const id = document.getElementById('modalTaskId').value;
+document.getElementById("saveTaskBtn").onclick = () => {
+  const title = document.getElementById("taskTitle").value.trim();
+  const id = document.getElementById("modalTaskId").value;
   if (!title) return alert("Title required");
 
   const data = {
     title,
-    description: document.getElementById('taskDesc').value,
-    priority: document.getElementById('taskPriority').value,
-    dueDate: document.getElementById('taskDueDate').value
+    description: document.getElementById("taskDesc").value,
+    priority: document.getElementById("taskPriority").value,
+    dueDate: document.getElementById("taskDueDate").value,
   };
 
-  if (id) 
-    {
-    const t = tasks.find(x => x.id === parseInt(id));
+  if (id) {
+    const t = tasks.find((x) => x.id === parseInt(id));
     Object.assign(t, data);
     const oldCard = document.querySelector(`li[data-id="${id}"]`);
     oldCard.replaceWith(createTaskCard(t));
-  } 
-  
-  else 
-    {
+  } else {
     const newTask = { id: nextId++, ...data };
-    addTask(document.getElementById('modalColumnId').value, newTask);
+    addTask(document.getElementById("modalColumnId").value, newTask);
   }
 
   closeModal();
-  
+};
+
+function closeModal() {
+  modal.classList.add("is-hidden");
+  document
+    .querySelectorAll(".modal-content input, textarea")
+    .forEach((i) => (i.value = ""));
+}
+
+document.getElementById("closeModalBtn").onclick = closeModal;
+document.querySelectorAll(".add-task-btn").forEach((btn) => {
+  btn.onclick = () => openModal(true, null, btn.getAttribute("data-column"));
+});
+
+clearDoneBtn.onclick = () => {
+  const cards = document.querySelectorAll("#done .task-card");
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      deleteTask(parseInt(card.getAttribute("data-id")));
+    }, index * 100);
+  });
 };
