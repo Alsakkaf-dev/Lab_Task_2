@@ -418,6 +418,11 @@ button {
   display: block;
 }
 
+.filter-controls select {
+    width: auto;
+    min-width: 180px; 
+}
+
 #priorityFilter {
     appearance: none; /* Removes standard browser arrow */
     background-color: #ffffff;
