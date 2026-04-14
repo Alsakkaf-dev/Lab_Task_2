@@ -58,49 +58,55 @@ header {
 }
 
 .column-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline; 
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 .column-header h2 {
-    font-size: 1.2rem;
-    font-weight: 900;
-    letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .task-list {
-    min-height: 450px;
-    padding-bottom: 20px;
+  min-height: 450px;
+  padding-bottom: 20px;
 }
 
 .task-list::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 
 .task-list::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 10px;
+  background: #cbd5e1;
+  border-radius: 10px;
 }
 
 button {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 @keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Task Cards */
@@ -108,7 +114,7 @@ button:active {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   border: 1px solid #edf2f7;
   position: relative; /* Needed for positioning the bar */
   overflow: hidden; /* Clips the corner if needed */
@@ -140,15 +146,14 @@ button[data-action="delete"]:hover {
 }
 
 .task-card.high {
-  border-left-color: #ef4444;
+  border-left-color: #f87171;
 }
 .task-card.medium {
-  border-left-color: #f59e0b;
+  border-left-color: #fbbf24;
 }
 .task-card.low {
-  border-left-color: #3b82f6;
+  border-left-color: #60a5fa;
 }
-
 .task-card h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
@@ -242,12 +247,12 @@ button {
 }
 
 .task-list {
-    list-style: none; 
-    padding: 0; 
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .dragging {
