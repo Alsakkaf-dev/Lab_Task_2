@@ -69,3 +69,32 @@ function renderNotes() {
     });
     updateCounter();
 }
+
+function addNote() {
+    const title = titleInput.value.trim();
+    if (title === "") {
+        alert("❌ Title cannot be empty!"); // BOM Alert
+        titleInput.focus();
+        return;
+    }
+    notes.push({ id: nextId++, title, content: contentInput.value.trim() });
+    renderNotes();
+    titleInput.value = ""; contentInput.value = "";
+    titleInput.focus();
+}
+
+function deleteNoteById(id) {
+    if (confirm("⚠️ Delete this note?")) { // BOM Confirm
+        notes = notes.filter(n => n.id !== id);
+        renderNotes();
+    }
+}
+
+function clearAll() {
+    if (notes.length === 0) return alert("Nothing to clear.");
+    if (confirm(`❗ Delete all ${notes.length} notes?`)) {
+        notes = []; nextId = 1;
+        renderNotes();
+        alert("✨ Cleared.");
+    }
+}
