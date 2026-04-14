@@ -8,62 +8,61 @@
 </head>
 <body>
 
-<div>
+<div class="container">
     <header>
-        <h1 class="container">✏️ Quick Notes Dashboard</h1>
+        <h1>✏️ Quick Notes Dashboard</h1>
         <p>Practice <strong>DOM manipulation</strong> + <strong>BOM</strong>.</p>
         <div class="badge">💻 Lab: BOM + DOM | pure JS</div>
     </header>
 
-    <div  class="grid">
+    <div class="grid">
         <!-- Part 2: Left Panel (Form) -->
         <div class="card" id="left-panel">
             <h2>✏️ Add a note</h2>
             <div class="form-group">
-                <label  for="noteTitle">Title *</label>
+                <label>Title *</label>
                 <input type="text" id="noteTitle" placeholder="e.g., DOM practice">
             </div>
-            <div  class="form-group">
-                <label for="noteContent">Content</label>
+            <div class="form-group">
+                <label>Content</label>
                 <textarea id="noteContent" rows="2" placeholder="Write something..."></textarea>
             </div>
-            <button  id="addNoteBtn">+ Add Note</button>
-            <div class="counter" id="noteCounter" style="margin-top: 1rem; font-size: 1.2rem; color: var(--color-text-muted);">0 notes</div>
+            <button id="addNoteBtn">+ Add Note</button>
+            <div class="counter" id="noteCounter">0 notes</div>
         </div>
 
         <!-- Part 3: Right Panel (List & BOM) -->
-        <div  class="card" id="right-panel">
+        <div class="card" id="right-panel">
             <h2>🗒️ Your notes</h2>
-            <div  id="notesContainer" class="notes-list">
+            <div id="notesContainer" class="notes-list">
                 <!-- Rendered dynamically -->
             </div>
             
-            <hr style="margin: var(--space-md) 0; border: 0; border-top: 1px solid var(--color-border);">
+            <hr>
             
-            <h2 style="font-size:1.6rem;" >🌐 Browser info (BOM)</h2>
-            <div class="info-panel" id="bomPanel" >
-                <div  class="info-row" style="display: flex; justify-content: space-between; font-size: 1.4rem; margin-bottom: 0.5rem;">
-
-
+            <h2 style="font-size:1rem;">🌐 Browser info (BOM)</h2>
+            <div class="info-panel" id="bomPanel">
+                <div class="info-row">
                     <span>🖥️ Window size:</span>
-                    <span id="windowSize" style="font-weight: bold;">-- x --</span>
-                </div  class="info-row" style="display: flex; justify-content: space-between; font-size: 1.2rem;">
-                <div>
-                    <span  id="userAgent" style="color: var(--color-text-muted); text-align: right; max-width: 60%;">🆔 User Agent:</span>
-                    <span>--</span>
+                    <span id="windowSize">-- x --</span>
+                </div>
+                <div class="info-row">
+                    <span>🆔 User Agent:</span>
+                    <span id="userAgent">--</span>
                 </div>
             </div>
 
-            <button id="clearAllBtn" style="background: var(--color-text-muted); margin-top: 1.6rem;">
+            <button id="clearAllBtn" style="background:#64748b; margin-top:0.8rem;">
                 🗑️ Clear all notes
             </button>
         </div>
     </div>
 
-    <footer style="margin-top: var(--space-lg); text-align: center; font-size: 1.2rem; color: var(--color-text-muted);">
+    <footer>
         BOM: confirm() on delete · alert() on empty title · resize event updates window size.
     </footer>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
