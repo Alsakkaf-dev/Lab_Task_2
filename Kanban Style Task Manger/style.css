@@ -274,3 +274,15 @@ button {
   transform: scale(0.95);
   rotate: 2deg;
 }
+
+#totalBadge {
+    display: inline-flex; 
+    width: auto;
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 99px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
