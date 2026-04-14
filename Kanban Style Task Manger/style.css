@@ -77,8 +77,9 @@ header {
 }
 
 .task-list {
-  min-height: 450px;
-  padding-bottom: 20px;
+  list-style: none !important;
+  padding: 0;
+  margin: 15px 0 0 0;
 }
 
 .task-list::-webkit-scrollbar {
