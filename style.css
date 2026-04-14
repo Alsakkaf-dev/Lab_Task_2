@@ -22,3 +22,11 @@
     --space-md: 1.6rem;
     --space-lg: 3.2rem;
 }
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    padding: var(--space-md);
+}
