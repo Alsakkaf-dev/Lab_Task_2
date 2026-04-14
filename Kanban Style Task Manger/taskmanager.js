@@ -102,3 +102,20 @@ priorityFilter.addEventListener("change", (e) => {
     card.classList.toggle("is-hidden", !isMatch);
   });
 });
+
+function openModal(isNew = true, taskId = null, colId = 'todo') {
+    modal.classList.remove('is-hidden');
+    if (isNew) {
+        document.getElementById('modalTitle').textContent = "Add Task";
+        document.getElementById('modalTaskId').value = "";
+        document.getElementById('modalColumnId').value = colId;
+    } else {
+        const task = tasks.find(t => t.id === taskId);
+        document.getElementById('modalTitle').textContent = "Edit Task";
+        document.getElementById('modalTaskId').value = task.id;
+        document.getElementById('taskTitle').value = task.title;
+        document.getElementById('taskDesc').value = task.description;
+        document.getElementById('taskPriority').value = task.priority;
+        document.getElementById('taskDueDate').value = task.dueDate;
+    }
+}
