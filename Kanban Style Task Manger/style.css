@@ -216,6 +216,7 @@ button {
 }
 
 .dragging {
-  opacity: 0.5;
-  transform: rotate(3deg);
+  opacity: 0.3;
+  transform: scale(0.95);
+  rotate: 2deg; 
 }
