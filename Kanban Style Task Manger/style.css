@@ -290,3 +290,13 @@ button {
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
+
+.filter-controls span {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+    display: block;
+}
