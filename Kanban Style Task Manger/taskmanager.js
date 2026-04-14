@@ -77,3 +77,23 @@ document.querySelectorAll('.task-list').forEach(list => {
 
 }
 );
+function inlineEdit(titleElement, taskId) {
+  const originalText = titleElement.textContent;
+  const input = document.createElement('input');
+  input.value = originalText;
+
+  titleElement.replaceWith(input);
+  input.focus();
+
+  const commitChange = () => {
+    const newTitle = input.value.trim() || originalText;
+    const task = tasks.find(t => t.id === taskId);
+    task.title = newTitle;
+    titleElement.textContent = newTitle;
+    input.replaceWith(titleElement);
+  };
+
+  input.onblur = commitChange;
+  input.onkeydown = (e) => { if (e.key === 'Enter') commitChange(); };
+}
+
