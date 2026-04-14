@@ -425,3 +425,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(41%) sepia(87%) saturate(1915%) hue-rotate(218deg) brightness(98%) contrast(92%);
 }
 
+#clearDoneBtn {
+    background-color: #fef2f2; 
+    border-color: #fecaca;
+    color: #ef4444; 
+}
+
+#clearDoneBtn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
+}
