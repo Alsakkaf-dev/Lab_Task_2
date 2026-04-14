@@ -186,28 +186,27 @@ clearDoneBtn.onclick = () => {
     });
 };
 
-document.querySelectorAll('.task-list').forEach(list => {
-    // Allows the element to be dropped
-    list.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        list.classList.add('drag-over');
+document.querySelectorAll('.column').forEach(column => {
+    const list = column.querySelector('.task-list');
+    
+    column.addEventListener('dragover', (e) => {
+        e.preventDefault(); 
+        column.classList.add('drag-over');
     });
 
-    list.addEventListener('dragleave', () => {
-        list.classList.remove('drag-over');
+    column.addEventListener('dragleave', () => {
+        column.classList.remove('drag-over');
     });
 
-    list.addEventListener('drop', (e) => {
+    column.addEventListener('drop', (e) => {
         e.preventDefault();
-        list.classList.remove('drag-over');
+        column.classList.remove('drag-over');
         
-        // Get the ID of the task being dragged
         const id = e.dataTransfer.getData('text/plain');
-        const draggedElement = document.querySelector(`li[data-id="${id}"]`);
+        const draggedCard = document.querySelector(`.task-card[data-id="${id}"]`);
         
-        // Move the element in the DOM
-        if (draggedElement) {
-            list.appendChild(draggedElement);
+        if (draggedCard && list) {
+            list.appendChild(draggedCard); 
         }
     });
 });
