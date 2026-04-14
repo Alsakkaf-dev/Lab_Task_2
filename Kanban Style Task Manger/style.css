@@ -105,16 +105,14 @@ button:active {
 
 /* Task Cards */
 .task-card {
-  background: white;
-  padding: 18px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
-  border-left: 6px solid #cbd5e1;
-  margin-bottom: 16px;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-    animation: slideIn 0.4s ease-out forwards;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  border: 1px solid #edf2f7;
+  position: relative; /* Needed for positioning the bar */
+  overflow: hidden; /* Clips the corner if needed */
+  border-left-width: 8px;
 }
 
 .task-card:hover {
