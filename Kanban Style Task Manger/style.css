@@ -58,14 +58,18 @@ header {
 }
 
 .column-header {
-    font-size: 1.1rem;
-    color: #1e293b;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: baseline; 
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+}
+
+.column-header h2 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
 .task-list {
