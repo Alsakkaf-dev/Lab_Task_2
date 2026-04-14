@@ -162,6 +162,15 @@ button[data-action="delete"]:hover {
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
 }
 
+#closeModalBtn {
+    flex: 1; 
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
 .btn-small {
   font-size: 0.75rem;
   padding: 5px 10px;
