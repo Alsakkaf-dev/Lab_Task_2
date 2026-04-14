@@ -85,10 +85,10 @@ header {
     margin-bottom: var(--space-lg);
 }
 
-/* --- TASK 4 CSS Grid --- */
+/* --- TASK 4 & 5: CSS Grid (Mobile First) --- */
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column for mobile */
     gap: var(--space-md);
 }
 
@@ -98,15 +98,17 @@ header {
     border-radius: 8px;
     border: 1px solid var(--color-border);
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease; 
+    transition: transform 0.2s ease; /* Transition for task 4 */
 }
 
+/* Card Lift Effect */
 .card:hover {
     transform: translateY(-4px);
 }
 
+/* Responsive Breakpoints */
 @media (min-width: 768px) {
     .grid {
-        grid-template-columns: 1fr 320px; 
+        grid-template-columns: 1fr 320px; /* Two columns for tablet/desktop */
     }
 }
