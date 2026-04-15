@@ -127,6 +127,7 @@ function inlineEdit(titleElement, taskId) {
   };
 }
 
+// Show or hide tasks based on the priority filter choice
 priorityFilter.addEventListener("change", (e) => {
   currentFilter = e.target.value; 
   const val = currentFilter;
@@ -135,6 +136,8 @@ priorityFilter.addEventListener("change", (e) => {
     card.classList.toggle("is-hidden", !isMatch);
   });
 });
+
+
 
 function openModal(isNew = true, taskId = null, colId = "todo") {
   modal.classList.remove("is-hidden");
