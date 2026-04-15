@@ -10,7 +10,7 @@ const totalBadge = document.getElementById("totalBadge");
 const clearDoneBtn = document.getElementById("clearDoneBtn");
 
 // --- 3. CORE CRUD FUNCTIONS (Task 2) ---
-
+// This function builds the visual card for each task using data
 function createTaskCard(taskObj) {
   const li = document.createElement('li');
   li.className = `task-card ${taskObj.priority}`; 
