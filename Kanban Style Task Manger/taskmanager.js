@@ -189,7 +189,7 @@ document.getElementById("saveTaskBtn").onclick = () => {
 };
 
 
-
+// Close the popup and clear all the text boxes
 function closeModal() {
   modal.classList.add("is-hidden");
   document
@@ -202,6 +202,9 @@ document.querySelectorAll(".add-task-btn").forEach((btn) => {
   btn.onclick = () => openModal(true, null, btn.getAttribute("data-column"));
 });
 
+
+
+
 clearDoneBtn.onclick = () => {
   const cards = document.querySelectorAll("#done .task-card");
   cards.forEach((card, index) => {
@@ -210,6 +213,8 @@ clearDoneBtn.onclick = () => {
     }, index * 100);
   });
 };
+
+
 
 document.querySelectorAll(".column").forEach((column) => {
   const list = column.querySelector(".task-list");
