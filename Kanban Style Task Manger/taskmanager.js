@@ -156,6 +156,8 @@ function openModal(isNew = true, taskId = null, colId = "todo") {
   }
 }
 
+
+// This runs when you click the save button to finish adding or editing
 document.getElementById("saveTaskBtn").onclick = () => {
   const title = document.getElementById("taskTitle").value.trim();
   const id = document.getElementById("modalTaskId").value;
@@ -185,6 +187,8 @@ document.getElementById("saveTaskBtn").onclick = () => {
 
   closeModal();
 };
+
+
 
 function closeModal() {
   modal.classList.add("is-hidden");
