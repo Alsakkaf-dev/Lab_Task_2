@@ -138,7 +138,7 @@ priorityFilter.addEventListener("change", (e) => {
 });
 
 
-
+// Open the popup window to either add a new task or edit an old one
 function openModal(isNew = true, taskId = null, colId = "todo") {
   modal.classList.remove("is-hidden");
   if (isNew) {
