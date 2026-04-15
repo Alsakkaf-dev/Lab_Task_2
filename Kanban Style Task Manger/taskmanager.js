@@ -65,6 +65,8 @@ function createTaskCard(taskObj) {
   return li;
 }
 
+
+// Put the new task in the list and show it in the column
 function addTask(columnId, taskObj) {
   tasks.push(taskObj);
   const card = createTaskCard(taskObj);
@@ -74,6 +76,7 @@ function addTask(columnId, taskObj) {
   document.querySelector(`#${columnId} .task-list`).appendChild(card);
   updateTaskCounter();
 }
+
 
 function deleteTask(taskId) {
   const card = document.querySelector(`li[data-id="${taskId}"]`);
