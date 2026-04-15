@@ -24,7 +24,7 @@ body {
 
 /* Header & Filter */
 header {
- max-width: 1200px;
+ max-width: 100%;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
@@ -54,18 +54,16 @@ header {
 
 .board {
   display: flex;       
-  flex-wrap: nowrap;  
+  flex-wrap: wrap;  
   gap: 20px;
-  max-width: 1300px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  overflow-x: auto;   
-  -webkit-overflow-scrolling: touch; 
 }
 
 .column {
-  flex: 0 0 320px;     
-    min-width: 320px;
+    flex: 1;    
+    min-width: 280px;
     background-color: #f1f5f9;
     border-radius: 16px;
     padding: 20px;
@@ -302,7 +300,8 @@ margin-bottom: 4px;
   background: white;
   padding: 40px;
   border-radius: 24px;
-  width: 480px;
+  width: 90%;
+  max-width: 480px;
   box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.3);
   display: flex;
   flex-direction: column;
