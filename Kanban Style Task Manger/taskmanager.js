@@ -204,7 +204,7 @@ document.querySelectorAll(".add-task-btn").forEach((btn) => {
 
 
 
-
+// Delete all tasks in the Done column one by one
 clearDoneBtn.onclick = () => {
   const cards = document.querySelectorAll("#done .task-card");
   cards.forEach((card, index) => {
