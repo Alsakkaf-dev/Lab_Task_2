@@ -166,6 +166,9 @@ document.getElementById("saveTaskBtn").onclick = () => {
     Object.assign(t, data);
     const oldCard = document.querySelector(`li[data-id="${id}"]`);
     oldCard.replaceWith(createTaskCard(t));
+    if (currentFilter !== "all" && t.priority !== currentFilter) {
+      newCard.classList.add("is-hidden");
+    }
   } else {
 
     const newTask = { id: nextId++, ...data };
