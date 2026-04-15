@@ -1,6 +1,7 @@
 // --- 1. STATE MANAGEMENT ---
 let tasks = [];
 let nextId = 1;
+let currentFilter = 'all';
 
 // --- 2. DOM REFERENCES ---
 const modal = document.getElementById("taskModal");
@@ -119,7 +120,8 @@ function inlineEdit(titleElement, taskId) {
 }
 
 priorityFilter.addEventListener("change", (e) => {
-  const val = e.target.value;
+  currentFilter = e.target.value; 
+  const val = currentFilter;
   document.querySelectorAll(".task-card").forEach((card) => {
     const isMatch = val === "all" || card.classList.contains(val);
     card.classList.toggle("is-hidden", !isMatch);
