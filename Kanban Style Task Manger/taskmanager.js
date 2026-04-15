@@ -77,7 +77,7 @@ function addTask(columnId, taskObj) {
   updateTaskCounter();
 }
 
-
+// Remove the task from the screen and the list
 function deleteTask(taskId) {
   const card = document.querySelector(`li[data-id="${taskId}"]`);
   if (card) {
