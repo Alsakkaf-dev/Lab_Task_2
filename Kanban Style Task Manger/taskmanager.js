@@ -104,6 +104,7 @@ document.querySelectorAll(".task-list").forEach((list) => {
   });
 });
 
+// Let the user change the title by typing directly on the card
 function inlineEdit(titleElement, taskId) {
   const originalText = titleElement.textContent;
   const input = document.createElement("input");
