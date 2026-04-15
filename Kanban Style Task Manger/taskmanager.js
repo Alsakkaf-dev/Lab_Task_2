@@ -90,6 +90,7 @@ function deleteTask(taskId) {
   }
 }
 
+// Change the number at the top to match how many tasks exist
 function updateTaskCounter() {
   totalBadge.textContent = `${tasks.length} Tasks`;
 }
