@@ -216,6 +216,7 @@ clearDoneBtn.onclick = () => {
 
 
 
+// Make the columns work so you can drag and drop tasks
 document.querySelectorAll(".column").forEach((column) => {
   const list = column.querySelector(".task-list");
 
