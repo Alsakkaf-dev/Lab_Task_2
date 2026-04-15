@@ -68,6 +68,9 @@ function createTaskCard(taskObj) {
 function addTask(columnId, taskObj) {
   tasks.push(taskObj);
   const card = createTaskCard(taskObj);
+  if (currentFilter !== "all" && taskObj.priority !== currentFilter) {
+    card.classList.add("is-hidden");
+  }
   document.querySelector(`#${columnId} .task-list`).appendChild(card);
   updateTaskCounter();
 }
