@@ -241,7 +241,7 @@ button[data-action="delete"]:hover {
   background: linear-gradient(to right, #fffbeb, #ffffff 15%);
 }
 .task-card.low {
-  border-left-color: #60a5fa;
+  border-left-color: #09ff15;
   background: linear-gradient(to right, #eff6ff, #ffffff 15%);
 }
 
@@ -351,7 +351,7 @@ button {
 
 #saveTaskBtn {
   background: #3b82f6;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .dragging {
